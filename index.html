@@ -361,25 +361,33 @@
 
       <!-- Warning Box -->
       <div class="glass-card rounded-2xl p-4 sm:p-5 border-l-4 border-amber-500 space-y-2.5">
-        <div class="flex items-center gap-2 text-amber-800 font-bold text-sm sm:text-base">
-          <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0"></i> 官方網址注意事項（完全免費，切勿受騙！）
-        </div>
-        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-          <b>菲律賓官方 eTravel 申報完全「免費」！</b> 請務必確認網址結尾為 <code class="bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded font-mono font-bold">.gov.ph</code>，切勿在要求付費的第三方詐騙網站輸入資料。
-        </p>
-        <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
-          <span class="font-bold text-slate-700">📌 官方唯一網址：</span>
-          <a href="https://etravel.gov.ph/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:underline font-mono font-bold text-xs sm:text-sm bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">
-            https://etravel.gov.ph/
-          </a>
-          <span class="text-slate-500 font-medium">（建議開放填寫時間：<b>8/23 (日) 起</b>）</span>
-        </p>
-          <span class="font-bold text-slate-700">📌 需要圖解可參考網路好心人教學：</span>
-          <a href="https://stellaclife.com/philippine-etravel-tutorial/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:underline font-mono font-bold text-xs sm:text-sm bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">
-            https://stellaclife.com/philippine-etravel-tutorial/
-          </a>
-        </div>
-      </div>
+  <div class="flex items-center gap-2 text-amber-800 font-bold text-sm sm:text-base">
+    <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0"></i> 官方網址注意事項（完全免費，切勿受騙！）
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    <b>菲律賓官方 eTravel 申報完全「免費」！</b> 請務必確認網址結尾為 <code class="bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded font-mono font-bold">.gov.ph</code>，切勿在要求付費的第三方詐騙網站輸入資料。
+  </p>
+  
+  <!-- 修改重點：垂直排列區塊，並加上 gap-2 增加行距 -->
+  <div class="flex flex-col gap-2 pt-1 text-xs">
+    <!-- 第一行：官方網址 -->
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="font-bold text-slate-700">📌 官方唯一網址：</span>
+      <a href="https://etravel.gov.ph/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:underline font-mono font-bold text-xs sm:text-sm bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">
+        https://etravel.gov.ph/
+      </a>
+      <span class="text-slate-500 font-medium">（建議開放填寫時間：<b>8/23 (日) 起</b>）</span>
+    </div>
+
+    <!-- 第二行：教學網址 -->
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="font-bold text-slate-700">📌 需要圖解可參考網路好心人教學：</span>
+      <a href="https://stellaclife.com/philippine-etravel-tutorial/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:underline font-mono font-bold text-xs sm:text-sm bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">
+        https://stellaclife.com/philippine-etravel-tutorial/
+      </a>
+    </div>
+  </div>
+</div>
 
       <!-- Steps Card -->
       <div class="glass-card rounded-2xl p-4 sm:p-5 space-y-4">
