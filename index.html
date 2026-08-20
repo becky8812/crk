@@ -67,7 +67,7 @@
         <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide uppercase mb-2 text-teal-100 shadow-sm border border-white/20">
           🌴 2026 員工旅遊行程總覽
         </span>
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight">菲律賓克拉克渡假之旅</h1>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight">菲律賓克拉克南島渡假之旅</h1>
         <p class="mt-2 text-teal-100 flex items-center gap-2 text-xs sm:text-sm font-medium">
           <i data-lucide="calendar" class="w-4 h-4 text-amber-300 shrink-0"></i> 8/26 (三) － 8/30 (日) 【共 5 天 4 夜】
         </p>
@@ -123,7 +123,7 @@
           <span class="text-slate-500">元</span>
         </div>
       </div>
- 
+
       <!-- Weather Notice -->
       <div class="glass-card rounded-xl p-3 shadow-sm flex items-center justify-between text-xs border border-slate-200/80">
         <div class="flex items-center gap-2">
@@ -522,11 +522,11 @@
             <ul class="text-xs text-slate-600 space-y-1.5 font-medium mb-3">
               <li class="flex items-start gap-1.5"><i data-lucide="truck" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> 4x4 越野吉普車穿梭火山溪谷</li>
               <li class="flex items-start gap-1.5"><i data-lucide="flame" class="w-3.5 h-3.5 text-red-500 mt-0.5 shrink-0"></i> 天然火山沙浴泥漿 SPA 與山谷溫泉</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="utensils" class="w-3.5 h-3.5 text-orange-500 mt-0.5 shrink-0"></i> Toscana 德州烤肉與海鮮 Buffet </li>
+              <li class="flex items-start gap-1.5"><i data-lucide="utensils" class="w-3.5 h-3.5 text-orange-500 mt-0.5 shrink-0"></i> Toscana 德州烤肉與海鮮 Buffet (每人獨享龍蝦餐點)</li>
             </ul>
           </div>
           <div class="bg-slate-50 p-2 rounded-xl text-[11px] sm:text-xs text-slate-600 space-y-0.5 border">
-            <div><b>午餐：</b>普寧溫泉原民 Buffet | <b>晚餐：</b>德州烤肉海鮮晚宴 </div>
+            <div><b>午餐：</b>普寧溫泉原民 Buffet | <b>晚餐：</b>德州烤肉海鮮晚宴 (含龍蝦)</div>
             <div class="text-amber-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
           </div>
         </div>
@@ -544,11 +544,11 @@
             <ul class="text-xs text-slate-600 space-y-1.5 font-medium mb-3">
               <li class="flex items-start gap-1.5"><i data-lucide="waves" class="w-3.5 h-3.5 text-blue-500 mt-0.5 shrink-0"></i> Subic Ocean Adventure 海豚與海獅秀</li>
               <li class="flex items-start gap-1.5"><i data-lucide="footprints" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> Zoobic Safari 叢林鐵籠車近距離餵猛虎</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="soup" class="w-3.5 h-3.5 text-red-500 mt-0.5 shrink-0"></i> 飯店蓬萊中餐廳精緻晚宴</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="soup" class="w-3.5 h-3.5 text-red-500 mt-0.5 shrink-0"></i> 飯店蓬萊中餐廳精緻歡送桌菜晚宴</li>
             </ul>
           </div>
           <div class="bg-slate-50 p-2 rounded-xl text-[11px] sm:text-xs text-slate-600 space-y-0.5 border">
-            <div><b>午餐：</b>海洋樂園內自由選購 | <b>晚餐：</b>蓬萊中餐廳精緻晚宴</div>
+            <div><b>午餐：</b>海洋樂園內自由選購 | <b>晚餐：</b>蓬萊中餐廳歡送桌菜</div>
             <div class="text-emerald-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
           </div>
         </div>
@@ -1010,7 +1010,7 @@
 
     function convertCurrency() {
       const phpInput = document.getElementById('calc-php-input').value;
-      const rate = 0.56; // 1 PHP ≈ 0.56 TWD
+      const rate = 0.58; // 1 PHP ≈ 0.58 TWD
       const php = parseFloat(phpInput) || 0;
       const twd = Math.round(php * rate);
       document.getElementById('calc-twd-output').innerText = twd.toLocaleString();
