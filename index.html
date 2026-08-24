@@ -17,14 +17,13 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* 基礎字體大小：提升手機端與電腦端字體，增強閱讀舒適度 */
     html {
-      font-size: 17px;
+      font-size: 16px;
       -webkit-tap-highlight-color: transparent;
     }
     @media (min-width: 768px) {
       html {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
     body {
@@ -43,7 +42,6 @@
       color: #ffffff !important;
       box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
     }
-    /* 隱藏滾動條但保持手機橫向滑動順暢 */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -51,7 +49,6 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-    /* 觸控點擊反饋 */
     .touch-active:active {
       transform: scale(0.98);
       transition: transform 0.1s ease;
@@ -158,7 +155,7 @@
         <input type="text" id="search-input" placeholder="搜尋景點、美食、海鮮、購物..." oninput="applyFilters()" class="w-full pl-9 pr-4 py-2 bg-white rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition" />
       </div>
 
-      <!-- Date & Notice Selector Tabs (Horizontal Touch Scroll on Mobile) -->
+      <!-- Date & Notice Selector Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5 -mx-1 px-1" id="day-tabs">
         <button onclick="switchTab('all', this)" class="day-btn tab-active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition whitespace-nowrap flex items-center gap-1.5 shrink-0 touch-active">
           <i data-lucide="layout-grid" class="w-4 h-4"></i> 全部行程
@@ -189,7 +186,7 @@
     </div>
 
     <!-- SECTION: 菲律賓旅遊須知區塊 -->
-    <div id="view-info" class="hidden space-y-4">
+    <div id="view-info" class="tab-view hidden space-y-4">
       <div class="bg-gradient-to-r from-amber-700 via-amber-800 to-indigo-950 text-white p-4 sm:p-5 rounded-2xl shadow-lg">
         <h2 class="text-lg sm:text-xl md:text-2xl font-black flex items-center gap-2">
           <i data-lucide="compass" class="w-6 h-6 text-amber-300 shrink-0"></i> 菲律賓旅遊實用須知與注意事項
@@ -230,11 +227,11 @@
           </div>
           <div class="space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed">
             <p>
-              💳 <b>信用卡刷卡便利：</b>本次員工旅遊安排之行程點（包含美多利飯店、SM 商場、Ayala Harbor Point、Toscana 餐廳及大部分設施）<b>普遍接受 Visa / Mastercard 信用卡付款</b>，建議攜帶雙幣卡或高回饋海外刷卡現金回饋卡。
+              💳 <b>信用卡刷卡便利：</b>本次員工旅遊安排之行程點（包含美多利飯店、SM 商場、Ayala Harbor Point 及大部分設施）<b>普遍接受 Visa / Mastercard 信用卡付款</b>，建議攜帶雙幣卡或高回饋海外刷卡現金回饋卡。
             </p>
             <div class="bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 text-emerald-900 text-xs space-y-1">
               <span class="font-bold flex items-center gap-1"><i data-lucide="coins" class="w-4 h-4 text-emerald-700"></i> 換匯最佳攻略：</span>
-              <p>若需要披索 (PHP) 現金用於購買路邊小吃、付床頭小費或小額紀念品，<b>建議在台灣準備美金 (USD) 百元大鈔</b>，抵達克拉克後至<b>美多利飯店櫃檯或機場/商場換匯處兌換披索</b>，匯率比在台灣直接用台幣換披索更划算且方便安全！</p>
+              <p>若需要披索 (PHP) 現金用於購買路邊小吃、付床頭小費或小額紀念品，<b>建議在台灣準備美金 (USD) 百元大鈔</b>，抵達克拉克後至<b>美多利飯店櫃檯或機場/商場換匯處兌換披索</b>，匯率比在台灣直接用台幣換披索更劃算且方便安全！</p>
             </div>
           </div>
         </div>
@@ -276,7 +273,7 @@
       <!-- 5. 克拉克伴手禮推薦全攻略 -->
       <div class="glass-card rounded-2xl p-4 sm:p-5 shadow-sm border-t-4 border-teal-500 space-y-3">
         <div class="flex items-center gap-2 font-bold text-slate-800 text-sm sm:text-base border-b pb-2">
-          <i data-lucide="sparkles" class="w-5 h-5 text-teal-600 shrink-0"></i> 克拉克必買-AI推薦 (Puregold / SM 商場採買指南)
+          <i data-lucide="sparkles" class="w-5 h-5 text-teal-600 shrink-0"></i> 克拉克必買伴手禮採買指南 (Puregold / SM 商場)
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 text-xs">
           
@@ -341,7 +338,7 @@
     </div>
 
     <!-- SECTION 0: eTravel 入境申報指南區塊 -->
-    <div id="view-etravel" class="hidden space-y-5">
+    <div id="view-etravel" class="tab-view hidden space-y-5">
       <div class="bg-gradient-to-r from-rose-900 via-rose-800 to-indigo-950 text-white p-4 sm:p-5 rounded-2xl shadow-lg">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
           <div>
@@ -361,33 +358,30 @@
 
       <!-- Warning Box -->
       <div class="glass-card rounded-2xl p-4 sm:p-5 border-l-4 border-amber-500 space-y-2.5">
-  <div class="flex items-center gap-2 text-amber-800 font-bold text-sm sm:text-base">
-    <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0"></i> 官方網址注意事項（完全免費，切勿受騙！）
-  </div>
-  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-    <b>菲律賓官方 eTravel 申報完全「免費」！</b> 請務必確認網址結尾為 <code class="bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded font-mono font-bold">.gov.ph</code>，切勿在要求付費的第三方詐騙網站輸入資料。
-  </p>
-  
-  <!-- 修改重點：垂直排列區塊，並加上 gap-2 增加行距 -->
-  <div class="flex flex-col gap-2 pt-1 text-xs">
-    <!-- 第一行：官方網址 -->
-    <div class="flex flex-wrap items-center gap-2">
-      <span class="font-bold text-slate-700">📌 官方唯一網址：</span>
-      <a href="https://etravel.gov.ph/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:underline font-mono font-bold text-xs sm:text-sm bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">
-        https://etravel.gov.ph/
-      </a>
-      <span class="text-slate-500 font-medium">（建議開放填寫時間：<b>8/23 (日) 起</b>）</span>
-    </div>
+        <div class="flex items-center gap-2 text-amber-800 font-bold text-sm sm:text-base">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0"></i> 官方網址注意事項（完全免費，切勿受騙！）
+        </div>
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <b>菲律賓官方 eTravel 申報完全「免費」！</b> 請務必確認網址結尾為 <code class="bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded font-mono font-bold">.gov.ph</code>，切勿在要求付費的第三方詐騙網站輸入資料。
+        </p>
+        
+        <div class="flex flex-col gap-2 pt-1 text-xs">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="font-bold text-slate-700">📌 官方唯一網址：</span>
+            <a href="https://etravel.gov.ph/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:underline font-mono font-bold text-xs sm:text-sm bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">
+              https://etravel.gov.ph/
+            </a>
+            <span class="text-slate-500 font-medium">（建議開放填寫時間：<b>8/23 (日) 起</b>）</span>
+          </div>
 
-    <!-- 第二行：教學網址 -->
-    <div class="flex flex-wrap items-center gap-2">
-      <span class="font-bold text-slate-700">📌 需要圖解可參考網路好心人教學：</span>
-      <a href="https://stellaclife.com/philippine-etravel-tutorial/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:underline font-mono font-bold text-xs sm:text-sm bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">
-        https://stellaclife.com/philippine-etravel-tutorial/
-      </a>
-    </div>
-  </div>
-</div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="font-bold text-slate-700">📌 需要圖解可參考網路教學：</span>
+            <a href="https://stellaclife.com/philippine-etravel-tutorial/" target="_blank" rel="noopener noreferrer" class="text-teal-700 hover:underline font-mono font-bold text-xs sm:text-sm bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">
+              https://stellaclife.com/philippine-etravel-tutorial/
+            </a>
+          </div>
+        </div>
+      </div>
 
       <!-- Steps Card -->
       <div class="glass-card rounded-2xl p-4 sm:p-5 space-y-4">
@@ -396,7 +390,6 @@
         </h3>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-xs">
-          <!-- Step 1 -->
           <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
             <div class="font-bold text-teal-800 flex items-center gap-1.5 text-xs sm:text-sm">
               <span class="w-5 h-5 rounded-full bg-teal-600 text-white text-[11px] flex items-center justify-center font-bold shrink-0">1</span>
@@ -410,7 +403,6 @@
             </ul>
           </div>
 
-          <!-- Step 2 -->
           <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
             <div class="font-bold text-teal-800 flex items-center gap-1.5 text-xs sm:text-sm">
               <span class="w-5 h-5 rounded-full bg-teal-600 text-white text-[11px] flex items-center justify-center font-bold shrink-0">2</span>
@@ -424,7 +416,6 @@
             </ul>
           </div>
 
-          <!-- Step 3 -->
           <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
             <div class="font-bold text-teal-800 flex items-center gap-1.5 text-xs sm:text-sm">
               <span class="w-5 h-5 rounded-full bg-teal-600 text-white text-[11px] flex items-center justify-center font-bold shrink-0">3</span>
@@ -438,7 +429,6 @@
             </ul>
           </div>
 
-          <!-- Step 4 -->
           <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
             <div class="font-bold text-teal-800 flex items-center gap-1.5 text-xs sm:text-sm">
               <span class="w-5 h-5 rounded-full bg-teal-600 text-white text-[11px] flex items-center justify-center font-bold shrink-0">4</span>
@@ -452,7 +442,6 @@
           </div>
         </div>
 
-        <!-- Step 5 & QR Code -->
         <div class="bg-teal-50 border border-teal-200 p-3.5 rounded-xl text-xs space-y-1.5">
           <div class="font-bold text-teal-900 flex items-center gap-2 text-xs sm:text-sm">
             <i data-lucide="qr-code" class="w-4 h-4 text-teal-700 shrink-0"></i> 步驟 5：截圖保存生成的綠色 QR Code
@@ -465,7 +454,7 @@
     </div>
 
     <!-- SECTION 1: ALL DAYS SUMMARY VIEW -->
-    <div id="view-all-summary" class="space-y-4">
+    <div id="view-all-summary" class="tab-view space-y-4">
       <div class="bg-teal-900 text-white p-3.5 sm:p-4 rounded-2xl shadow-md flex items-center justify-between">
         <div>
           <h2 class="text-base sm:text-lg font-bold flex items-center gap-2">
@@ -482,20 +471,21 @@
           <div>
             <div class="flex justify-between items-center border-b pb-2 mb-2.5">
               <span class="font-black text-teal-800 text-sm sm:text-base">8/26 (三)</span>
-              <span class="text-[11px] px-2 py-0.5 bg-teal-100 text-teal-800 rounded-md font-semibold">抵達與冒險</span>
+              <span class="text-[11px] px-2 py-0.5 bg-teal-100 text-teal-800 rounded-md font-semibold">Day 1 · 抵達與冒險</span>
             </div>
             <div class="bg-teal-50/80 p-2 rounded-xl border border-teal-100 mb-2.5 text-xs font-bold text-teal-900 flex items-center gap-1.5">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-teal-600 shrink-0"></i> 克拉克恐龍島 + 韓國城美食
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-teal-600 shrink-0"></i> 恐龍島 + Puregold超市 + 韓國城烤肉
             </div>
             <ul class="text-xs text-slate-600 space-y-1.5 font-medium mb-3">
-              <li class="flex items-start gap-1.5"><i data-lucide="plane-landing" class="w-3.5 h-3.5 text-blue-500 mt-0.5 shrink-0"></i> BR233 (09:00-11:00) 抵達克拉克</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="building" class="w-3.5 h-3.5 text-indigo-500 mt-0.5 shrink-0"></i> 入住五星美多利賭場酒店 (Midori)</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="trees" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i> 恐龍島主題樂園 1:1 機械恐龍互動</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-purple-500 mt-0.5 shrink-0"></i> Clark Puregold超市</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="plane-landing" class="w-3.5 h-3.5 text-blue-500 mt-0.5 shrink-0"></i> 09:00-11:00 BR233 直飛克拉克</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="building" class="w-3.5 h-3.5 text-indigo-500 mt-0.5 shrink-0"></i> 12:30 Check-in 美多利賭場酒店</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="trees" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i> 13:30-16:30 克拉克恐龍島主題樂園</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-purple-500 mt-0.5 shrink-0"></i> 16:45-17:45 Clark Puregold 超市採買</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="utensils" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> 18:00-20:00 Single Bungle 韓式烤肉</li>
             </ul>
           </div>
           <div class="bg-slate-50 p-2 rounded-xl text-[11px] sm:text-xs text-slate-600 space-y-0.5 border">
-            <div><b>午餐：</b>機上精緻餐點 | <b>晚餐：</b>韓國城 Single Bungle 韓式烤肉</div>
+            <div><b>午餐：</b>機上精緻餐點 | <b>晚餐：</b>Single Bungle 韓式烤肉</div>
             <div class="text-teal-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
           </div>
         </div>
@@ -505,19 +495,19 @@
           <div>
             <div class="flex justify-between items-center border-b pb-2 mb-2.5">
               <span class="font-black text-indigo-800 text-sm sm:text-base">8/27 (四)</span>
-              <span class="text-[11px] px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-md font-semibold">西班牙風情</span>
+              <span class="text-[11px] px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-md font-semibold">Day 2 · 西班牙風情與在地美食</span>
             </div>
             <div class="bg-indigo-50/80 p-2 rounded-xl border border-indigo-100 mb-2.5 text-xs font-bold text-indigo-900 flex items-center gap-1.5">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-600 shrink-0"></i> 西班牙村 Las Casas + 雙購物中心
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-600 shrink-0"></i> 西班牙村 Las Casas + 特色料理 + SM City
             </div>
             <ul class="text-xs text-slate-600 space-y-1.5 font-medium mb-3">
               <li class="flex items-start gap-1.5"><i data-lucide="landmark" class="w-3.5 h-3.5 text-indigo-500 mt-0.5 shrink-0"></i> 西班牙古蹟村巡禮與竹筏/運河遊船</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="shopping-cart" class="w-3.5 h-3.5 text-purple-500 mt-0.5 shrink-0"></i> Ayala Malls Harbor Point 港灣購物</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="store" class="w-3.5 h-3.5 text-purple-500 mt-0.5 shrink-0"></i> SM City Pampanga 大型旗艦購物中心</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="utensils" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> 17:00-18:30 享用菲律賓當地特色料理</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="store" class="w-3.5 h-3.5 text-purple-500 mt-0.5 shrink-0"></i> 19:00-21:00 SM City Pampanga 大型購物中心</li>
             </ul>
           </div>
           <div class="bg-slate-50 p-2 rounded-xl text-[11px] sm:text-xs text-slate-600 space-y-0.5 border">
-            <div><b>午餐：</b>西班牙村餐廳 | <b>晚餐：</b>SM 商場內自由選購</div>
+            <div><b>午餐：</b>西班牙村特色風味餐 | <b>晚餐：</b>當地特色料理</div>
             <div class="text-indigo-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
           </div>
         </div>
@@ -527,596 +517,550 @@
           <div>
             <div class="flex justify-between items-center border-b pb-2 mb-2.5">
               <span class="font-black text-amber-800 text-sm sm:text-base">8/28 (五)</span>
-              <span class="text-[11px] px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md font-semibold">越野與德州烤肉海鮮</span>
+              <span class="text-[11px] px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md font-semibold">Day 3 · 戶外極限與購物休閒</span>
             </div>
             <div class="bg-amber-50/80 p-2 rounded-xl border border-amber-100 mb-2.5 text-xs font-bold text-amber-900 flex items-center gap-1.5">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i> 普寧溫泉 Puning + Toscana 德州烤肉海鮮晚宴
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i> gemik Clark 戶外活動 / Marquee Mall / 飯店設施
             </div>
             <ul class="text-xs text-slate-600 space-y-1.5 font-medium mb-3">
-              <li class="flex items-start gap-1.5"><i data-lucide="truck" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> 4x4 越野吉普車穿梭火山溪谷</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="flame" class="w-3.5 h-3.5 text-red-500 mt-0.5 shrink-0"></i> 天然火山沙浴泥漿 SPA 與山谷溫泉</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="utensils" class="w-3.5 h-3.5 text-orange-500 mt-0.5 shrink-0"></i> Toscana 德州烤肉與海鮮 Buffet (每人獨享龍蝦餐點)</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="compass" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> gemik Clark ATV、射擊、射箭戶外體驗</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-purple-500 mt-0.5 shrink-0"></i> Marquee Mall 逛街與午餐自理</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="coffee" class="w-3.5 h-3.5 text-teal-500 mt-0.5 shrink-0"></i> 美多利飯店豪華設施享受</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="utensils" class="w-3.5 h-3.5 text-amber-700 shrink-0"></i> 晚餐：Texas Joe's 德州肋排海鮮饗宴</li>
             </ul>
           </div>
           <div class="bg-slate-50 p-2 rounded-xl text-[11px] sm:text-xs text-slate-600 space-y-0.5 border">
-            <div><b>午餐：</b>普寧溫泉原民 Buffet | <b>晚餐：</b>德州烤肉海鮮晚宴</div>
+            <div><b>午餐：</b>Marquee Mall 自理 | <b>晚餐：</b>Texas Joe's 美式肋排</div>
             <div class="text-amber-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
           </div>
         </div>
 
         <!-- Quick Card 8/29 (六) -->
-        <div onclick="switchTab('day4')" class="glass-card rounded-2xl p-4 shadow-sm hover:shadow-lg transition cursor-pointer border-t-4 border-emerald-500 flex flex-col justify-between touch-active">
+        <div onclick="switchTab('day4')" class="glass-card rounded-2xl p-4 shadow-sm hover:shadow-lg transition cursor-pointer border-t-4 border-cyan-500 flex flex-col justify-between touch-active">
           <div>
             <div class="flex justify-between items-center border-b pb-2 mb-2.5">
-              <span class="font-black text-emerald-800 text-sm sm:text-base">8/29 (六)</span>
-              <span class="text-[11px] px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-md font-semibold">海洋與野生動物</span>
+              <span class="font-black text-cyan-800 text-sm sm:text-base">8/29 (六)</span>
+              <span class="text-[11px] px-2 py-0.5 bg-cyan-100 text-cyan-800 rounded-md font-semibold">Day 4 · 蘇比克灣海洋冒險與歡送晚宴</span>
             </div>
-            <div class="bg-emerald-50/80 p-2 rounded-xl border border-emerald-100 mb-2.5 text-xs font-bold text-emerald-900 flex items-center gap-1.5">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> 蘇比克海洋樂園 + 野生動物園
+            <div class="bg-cyan-50/80 p-2 rounded-xl border border-cyan-100 mb-2.5 text-xs font-bold text-cyan-900 flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-600 shrink-0"></i> 蘇比克海洋樂園 + 野生動物園 + 蓬萊歡送宴
             </div>
             <ul class="text-xs text-slate-600 space-y-1.5 font-medium mb-3">
-              <li class="flex items-start gap-1.5"><i data-lucide="waves" class="w-3.5 h-3.5 text-blue-500 mt-0.5 shrink-0"></i> Subic Ocean Adventure 海豚與海獅秀</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="footprints" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> Zoobic Safari 叢林鐵籠車近距離餵猛虎</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="soup" class="w-3.5 h-3.5 text-red-500 mt-0.5 shrink-0"></i> 飯店蓬萊中餐廳精緻晚宴</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="waves" class="w-3.5 h-3.5 text-cyan-500 mt-0.5 shrink-0"></i> 09:00-14:00 Subic Ocean Adventure 海洋樂園</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="footprints" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> 14:10-16:00 Zoobic Safari 老虎鐵籠車探險</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="utensils" class="w-3.5 h-3.5 text-rose-500 mt-0.5 shrink-0"></i> 18:30 蓬萊中餐廳 歡送桌菜晚宴</li>
             </ul>
           </div>
           <div class="bg-slate-50 p-2 rounded-xl text-[11px] sm:text-xs text-slate-600 space-y-0.5 border">
-            <div><b>午餐：</b>海洋樂園內自由選購 | <b>晚餐：</b>蓬萊中餐廳精緻晚宴</div>
-            <div class="text-emerald-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
+            <div><b>午餐：</b>海洋樂園園區內自理 | <b>晚餐：</b>蓬萊中餐廳歡送桌菜晚宴</div>
+            <div class="text-cyan-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
           </div>
         </div>
 
         <!-- Quick Card 8/30 (日) -->
-        <div onclick="switchTab('day5')" class="glass-card rounded-2xl p-4 shadow-sm hover:shadow-lg transition cursor-pointer border-t-4 border-blue-500 flex flex-col justify-between sm:col-span-2 lg:col-span-1 touch-active">
+        <div onclick="switchTab('day5')" class="glass-card rounded-2xl p-4 shadow-sm hover:shadow-lg transition cursor-pointer border-t-4 border-rose-500 flex flex-col justify-between touch-active">
           <div>
             <div class="flex justify-between items-center border-b pb-2 mb-2.5">
-              <span class="font-black text-blue-800 text-sm sm:text-base">8/30 (日)</span>
-              <span class="text-[11px] px-2 py-0.5 bg-blue-100 text-blue-800 rounded-md font-semibold">滿載歸途</span>
+              <span class="font-black text-rose-800 text-sm sm:text-base">8/30 (日)</span>
+              <span class="text-[11px] px-2 py-0.5 bg-rose-100 text-rose-800 rounded-md font-semibold">Day 5 · 珍重再見返台</span>
             </div>
-            <div class="bg-blue-50/80 p-2 rounded-xl border border-blue-100 mb-2.5 text-xs font-bold text-blue-900 flex items-center gap-1.5">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i> 克拉克機場 (T2) ➔ 桃園機場 (T2)
+            <div class="bg-rose-50/80 p-2 rounded-xl border border-rose-100 mb-2.5 text-xs font-bold text-rose-900 flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-600 shrink-0"></i> 美多利飯店巡禮 ➔ 克拉克機場 ➔ 台灣
             </div>
             <ul class="text-xs text-slate-600 space-y-1.5 font-medium mb-3">
-              <li class="flex items-start gap-1.5"><i data-lucide="log-out" class="w-3.5 h-3.5 text-slate-500 mt-0.5 shrink-0"></i> 09:45 退房搭乘接駁專車前往克拉克機場 T2</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="plane-takeoff" class="w-3.5 h-3.5 text-blue-600 mt-0.5 shrink-0"></i> BR234 (12:00 - 14:00) 返抵桃園 T2</li>
-              <li class="flex items-start gap-1.5"><i data-lucide="home" class="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0"></i> 帶著滿載的美好回憶順利返抵溫暖的家</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="coffee" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i> 享受美多利飯店高級自助早餐</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="plane-takeoff" class="w-3.5 h-3.5 text-rose-500 mt-0.5 shrink-0"></i> 長榮 BR234 (12:00-14:00) 飛回桃園機場</li>
+              <li class="flex items-start gap-1.5"><i data-lucide="home" class="w-3.5 h-3.5 text-teal-600 mt-0.5 shrink-0"></i> 滿載美好回憶順利返家！</li>
             </ul>
           </div>
           <div class="bg-slate-50 p-2 rounded-xl text-[11px] sm:text-xs text-slate-600 space-y-0.5 border">
-            <div><b>早餐：</b>飯店內享用 | <b>午餐：</b>機上精緻餐點</div>
-            <div class="text-blue-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
+            <div><b>午餐：</b>機上精緻餐點 | <b>備註：</b>預計 14:00 抵達桃園 T2</div>
+            <div class="text-rose-700 font-bold mt-1 text-right flex items-center justify-end gap-1">查看詳細行程 ➔</div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- SECTION 2: DETAILED DAY-BY-DAY VIEW -->
-    <div id="view-details" class="hidden space-y-5">
-
-      <!-- ================= Day 1: 8/26 (三) ================= -->
-      <div class="day-section day1 space-y-4">
-        <div class="bg-teal-800 text-white p-3.5 sm:p-4 rounded-2xl shadow-md">
-          <h2 class="text-base sm:text-lg font-black flex items-center gap-2">
-            <i data-lucide="calendar" class="w-5 h-5 text-amber-300 shrink-0"></i> 8/26 (三)：抵達克拉克．恐龍島與韓國城美食
-          </h2>
-        </div>
-
-        <!-- Flight Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-blue-500 space-y-3" data-day="day1">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-blue-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 09:00 - 11:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">搭乘長榮航空 BR233 直飛菲律賓克拉克</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-blue-100 text-blue-800 whitespace-nowrap shrink-0">✈️ 去程國際航班</span>
-          </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p><b>【去程航班資訊】</b>長榮航空 BR233（出發日期：<b>2026 年 8 月 26 日 星期三</b>）</p>
-            <ul class="list-disc pl-5 space-y-0.5 text-xs text-slate-600">
-              <li><b>起飛：</b>桃園國際機場 (TPE) <b>第二航廈 Terminal 2</b> (09:00)</li>
-              <li><b>抵達：</b>克拉克國際機場 (CRK) </b> (11:00)</li>
-              <li><b>託運行李：</b>每人 <b>1 件 23 kg</b> ｜ <b>手提行李：</b>每人 <b>1 件 7 kg</b></li>
-              <li><b>說明：</b>航程約 2 小時，機上享用熱騰騰精緻午餐。</li>
-            </ul>
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4 text-blue-500 shrink-0"></i> 克拉克國際機場 (CRK)</span>
-            <a href="https://maps.google.com/?q=Clark+International+Airport+Terminal+2" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-blue-50 text-blue-700 font-semibold rounded-lg hover:bg-blue-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
-            </a>
-          </div>
-        </div>
-
-        <!-- Hotel Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-indigo-500 space-y-3" data-day="day1">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-indigo-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 12:30</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">CHECK IN 美多利賭場酒店 (Midori Clark Hotel)</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-100 text-indigo-800 whitespace-nowrap shrink-0">🏨 五星住宿</span>
-          </div>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            克拉克特區內知名頂級渡假飯店，建築融合極簡現代美學與綠意林蔭。附設 24 小時 Casino 娛樂場、戶外景觀泳池、SPA 芳療中心與多國美食餐廳。
-          </p>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4 text-indigo-500 shrink-0"></i> Midori Clark Hotel and Casino</span>
-            <a href="https://maps.google.com/?q=Midori+Clark+Hotel+and+Casino" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-indigo-50 text-indigo-700 font-semibold rounded-lg hover:bg-indigo-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
-            </a>
-          </div>
-        </div>
-
-        <!-- Dinosaur Island Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-emerald-500 space-y-3" data-day="day1">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-emerald-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 13:30 - 16:30</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">克拉克恐龍島主題樂園 (Clark Dinosaur Island)</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 whitespace-nowrap shrink-0">🏞️ 景點介紹</span>
-          </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p>📍 <b>景點特色：</b>菲國首屈一指的侏羅紀主題森林公園！結合自然叢林景致與先進動態機械，打造數十隻 1:1 大型機械恐龍。</p>
-            <p>🦖 <b>體驗亮點：</b>恐龍逼真擺頭眨眼吼叫，欣賞「恐龍舞蹈表演」與「化石考古區」，身歷其境走進《侏羅紀公園》。</p>
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="timer" class="w-4 h-4 text-slate-400 shrink-0"></i> 建議停留時間：約 3 小時</span>
-            <a href="https://maps.google.com/?q=Dinosaur+Island+Clark" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
-            </a>
-          </div>
-        </div>
-
-        <!-- Puregold Supermarket Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-purple-500 space-y-3" data-day="day1">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-purple-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 16:45 - 17:45</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">Clark Puregold超市</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-purple-100 text-purple-800 whitespace-nowrap shrink-0">🛍️ 購物補給</span>
-          </div>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            座落於克拉克自由港區特區內的 Clark Puregold超市，是抵達第一天採買飲用水、芒果乾、香蕉切片餅乾、椰子水與各類特色零食伴手禮的最佳補給點。
-          </p>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="shopping-bag" class="w-4 h-4 text-purple-500 shrink-0"></i> Clark Puregold超市</span>
-            <a href="https://maps.google.com/?q=15.194097910234078,120.53077348450599" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-purple-50 text-purple-700 font-semibold rounded-lg hover:bg-purple-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
-            </a>
-          </div>
-        </div>
-
-        <!-- Korean Town Dinner Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-orange-500 space-y-3" data-day="day1">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-orange-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 18:00 - 20:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">韓國城正宗韓式烤肉 (Single Bungle 싱글벙글)</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-orange-100 text-orange-800 whitespace-nowrap shrink-0">🍱 美食饗宴</span>
-          </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p>📍 <b>景點特色：</b>克拉克擁有全菲規模最大的韓國城 (Korea Town)，聚集許多正宗韓籍主廚道地餐廳。</p>
-            <p>🥩 <b>美食亮點：</b>第一晚安排人氣極佳的 싱글벙글 Single Bungle 韓式烤肉，享用優質肉品、豐盛道地韓式小菜與美味鍋物。</p>
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="utensils-crossed" class="w-4 h-4 text-orange-500 shrink-0"></i> Single Bungle Korean BBQ Restaurant</span>
-            <a href="https://maps.google.com/?q=Single+Bungle+Korean+BBQ+Restaurant+Angeles" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-orange-50 text-orange-700 font-semibold rounded-lg hover:bg-orange-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
-            </a>
-          </div>
-        </div>
-
-        <!-- Meal Summary 8/26 -->
-        <div class="glass-card rounded-xl p-3 bg-amber-50/90 border border-amber-200 text-xs flex flex-wrap gap-x-5 gap-y-1.5 text-slate-700 shadow-sm" data-day="day1">
-          <span><b>🥣 早餐：</b>自理</span>
-          <span><b>🍱 午餐：</b>長榮機上精緻餐點</span>
-          <span><b>🥩 晚餐：</b>韓國城 Single Bungle (싱글벙글) 韓式烤肉</span>
-          <span><b>🏨 住宿：</b>美多利賭場酒店 Midori Clark Hotel</span>
+    <!-- SECTION DAY 1 DETAIL -->
+    <div id="view-day1" class="tab-view hidden space-y-4">
+      <div class="bg-teal-700 text-white p-4 rounded-2xl shadow-md flex justify-between items-center">
+        <div>
+          <span class="text-xs px-2 py-0.5 bg-white/20 rounded-md font-semibold">第一天 · 8月26日 (星期三)</span>
+          <h2 class="text-lg sm:text-xl font-bold mt-1">直飛克拉克、Check-in 美多利、恐龍島冒險、Puregold購物與韓式烤肉</h2>
         </div>
       </div>
 
-      <!-- ================= Day 2: 8/27 (四) ================= -->
-      <div class="day-section day2 space-y-4">
-        <div class="bg-indigo-900 text-white p-3.5 sm:p-4 rounded-2xl shadow-md">
-          <h2 class="text-base sm:text-lg font-black flex items-center gap-2">
-            <i data-lucide="calendar" class="w-5 h-5 text-amber-300 shrink-0"></i> 8/27 (四)：古典西班牙村與雙購物中心
-          </h2>
-        </div>
-
-        <!-- Las Casas Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-emerald-500 space-y-3" data-day="day2">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-emerald-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 08:00 - 14:30</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">西班牙村 LAS CASAS (歷史導覽、運河遊船與午餐)</h3>
+      <div class="space-y-3 text-xs sm:text-sm">
+        <!-- Event 1: Flight -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-teal-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-teal-700 font-bold px-2 py-0.5 bg-teal-50 rounded border border-teal-200">09:00 - 11:00</span>
+              <span class="text-xs font-bold text-teal-800 flex items-center gap-1">✈️ 去程國際航班</span>
             </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 whitespace-nowrap shrink-0">🏞️ 歷史文化</span>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">長榮航空 BR233 直飛菲律賓克拉克</h3>
+            <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-slate-700 text-xs space-y-1">
+              <div><b>起飛：</b>桃園國際機場 (TPE) 第二航廈 Terminal 2 (09:00)</div>
+              <div><b>抵達：</b>克拉克國際機場 (CRK) (11:00)</div>
+              <div><b>行李限額：</b>託運每人 1 件 (23kg) ｜ 手提每人 1 件 (7kg)</div>
+              <div class="text-slate-500 pt-0.5 border-t border-slate-200/60">💡 說明：航程約 2 小時，機上享用熱騰騰精緻午餐。</div>
+            </div>
           </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p>📍 <b>景點特色：</b>位於巴丹半島（Las Casas Filipinas de Acuzar），將全菲 18~19 世紀西班牙殖民時期古老貴族豪宅拆解並於此地還原重組。</p>
-            <p>⛵ <b>體驗亮點：</b>專人歷史導覽解說、漫步紅磚石板路、搭乘特色竹筏/運河遊船，感受浪漫歐式風情。</p>
-          </div>
-          <div class="bg-amber-50 p-2.5 rounded-xl text-xs text-amber-900 border border-amber-200/80 leading-relaxed">
-            💡 <b>貼心提醒：</b>車程約 2 小時。建議穿著輕便平底鞋與攜帶遮陽帽。午餐於園區內西班牙風格餐廳享用。
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="compass" class="w-4 h-4 text-emerald-600 shrink-0"></i> Las Casas Filipinas de Acuzar</span>
-            <a href="https://maps.google.com/?q=Las+Casas+Filipinas+de+Acuzar" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Taiwan+Taoyuan+International+Airport+Terminal+2" target="_blank" class="px-3 py-1.5 bg-teal-50 hover:bg-teal-100 text-teal-700 font-bold rounded-lg border border-teal-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 桃園 T2 導航
             </a>
           </div>
         </div>
 
-        <!-- Ayala Malls Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-purple-500 space-y-3" data-day="day2">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-purple-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 16:00 - 18:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">Ayala Malls Harbor Point 蘇比克灣港灣購物中心</h3>
+        <!-- Event 2: Hotel Check-in -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-indigo-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-indigo-700 font-bold px-2 py-0.5 bg-indigo-50 rounded border border-indigo-200">12:30</span>
+              <span class="text-xs font-bold text-indigo-800 flex items-center gap-1">🏨 飯店入住</span>
             </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-purple-100 text-purple-800 whitespace-nowrap shrink-0">🛍️ 購物巡禮</span>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">CHECK IN 美多利賭場酒店 (Midori Clark Hotel)</h3>
+            <p class="text-slate-600 leading-relaxed">克拉克特區內知名頂級渡假飯店，建築融合極簡現代美學與綠意林蔭。附設 24 小時 Casino 娛樂場、戶外景觀泳池、SPA 芳療中心與多國美食餐廳。</p>
           </div>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            座落於蘇比克灣畔的優雅開放式購物商場，結合海港風光與綠意中庭，匯集許多國際休閒品牌與戶外漫步區。
-          </p>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="anchor" class="w-4 h-4 text-blue-500 shrink-0"></i> Harbor Point Subic</span>
-            <a href="https://maps.google.com/?q=Ayala+Malls+Harbor+Point" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-purple-50 text-purple-700 font-semibold rounded-lg hover:bg-purple-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Midori+Clark+Hotel+and+Casino" target="_blank" class="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold rounded-lg border border-indigo-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 美多利酒店導航
             </a>
           </div>
         </div>
 
-        <!-- SM City Pampanga Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-purple-500 space-y-3" data-day="day2">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-purple-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 19:30 - 21:30</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">邦板牙大型購物中心 SM City Pampanga (採買與晚餐)</h3>
+        <!-- Event 3: Dinosaur Island -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-emerald-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-emerald-700 font-bold px-2 py-0.5 bg-emerald-50 rounded border border-emerald-200">13:30 - 16:30</span>
+              <span class="text-xs font-bold text-emerald-800 flex items-center gap-1">🏞️ 景點介紹</span>
             </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-purple-100 text-purple-800 whitespace-nowrap shrink-0">🛍️ 購物/美食</span>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">克拉克恐龍島主題樂園 (Clark Dinosaur Island)</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 景點特色：</b>菲國首屈一指的侏羅紀主題森林公園！結合自然叢林景致與先進動態機械，打造數十隻 1:1 大型機械恐龍。</p>
+              <p><b>🦖 體驗亮點：</b>恐龍逼真擺頭眨眼吼叫，欣賞「恐龍舞蹈表演」與「化石考古區」，身歷其境走進《侏羅紀公園》。</p>
+            </div>
           </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p>📍 <b>景點特色：</b>區域規模最大的超大型購物中心，擁有數百間店家與美食街。</p>
-            <p>🎡 <b>娛樂亮點：</b>戶外區設有 Sky Ranch 巨型摩天輪遊樂園，晚餐可於商場內異國餐廳自由享用。</p>
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="utensils" class="w-4 h-4 text-purple-500 shrink-0"></i> 晚餐於 SM 商場內自由選購美食</span>
-            <a href="https://maps.google.com/?q=SM+City+Pampanga" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-purple-50 text-purple-700 font-semibold rounded-lg hover:bg-purple-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Dinosaurs+Island+Clark" target="_blank" class="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold rounded-lg border border-emerald-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 恐龍島導航
             </a>
           </div>
         </div>
 
-        <!-- Meal Summary 8/27 -->
-        <div class="glass-card rounded-xl p-3 bg-amber-50/90 border border-amber-200 text-xs flex flex-wrap gap-x-5 gap-y-1.5 text-slate-700 shadow-sm" data-day="day2">
-          <span><b>🥣 早餐：</b>飯店內享用</span>
-          <span><b>🥗 午餐：</b>西班牙村古蹟特色餐廳</span>
-          <span><b>🛍️ 晚餐：</b>SM Pampanga 商場內自由選購</span>
-          <span><b>🏨 住宿：</b>美多利賭場酒店 Midori Clark Hotel</span>
+        <!-- Event 4: Puregold -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-purple-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-purple-700 font-bold px-2 py-0.5 bg-purple-50 rounded border border-purple-200">16:45 - 17:45</span>
+              <span class="text-xs font-bold text-purple-800 flex items-center gap-1">🛍️ 購物補給</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">Clark Puregold 超市採買</h3>
+            <p class="text-slate-600 leading-relaxed">座落於克拉克自由港區特區內的 Clark Puregold 超市，是抵達第一天採買飲用水、芒果乾、香蕉切片餅乾、椰子水與各類特色零食伴手禮的最佳補給點。</p>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Puregold+Duty+Free+Clark" target="_blank" class="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold rounded-lg border border-purple-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Puregold 超市導航
+            </a>
+          </div>
         </div>
+
+        <!-- Event 5: Single Bungle BBQ -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-amber-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-amber-700 font-bold px-2 py-0.5 bg-amber-50 rounded border border-amber-200">18:00 - 20:00</span>
+              <span class="text-xs font-bold text-amber-800 flex items-center gap-1">🍱 美食饗宴</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">韓國城正宗韓式烤肉 (Single Bungle 싱글벙글)</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 景點特色：</b>克拉克擁有全菲規模最大的韓國城 (Korea Town)，聚集許多正宗韓籍主廚道地餐廳。</p>
+              <p><b>🥩 美食亮點：</b>第一晚安排人氣極佳的 싱글벙글 Single Bungle 韓式烤肉，享用優質肉品、豐盛道地韓式小菜與美味鍋物。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Single+Bungle+Clark+Korea+Town" target="_blank" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 font-bold rounded-lg border border-amber-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 韓國城烤肉導航
+            </a>
+          </div>
+        </div>
+
       </div>
-
-      <!-- ================= Day 3: 8/28 (五) ================= -->
-      <div class="day-section day3 space-y-4">
-        <div class="bg-amber-900 text-white p-3.5 sm:p-4 rounded-2xl shadow-md">
-          <h2 class="text-base sm:text-lg font-black flex items-center gap-2">
-            <i data-lucide="calendar" class="w-5 h-5 text-amber-300 shrink-0"></i> 8/28 (五)：普寧火山溫泉與德州烤肉海鮮晚宴
-          </h2>
-        </div>
-
-        <!-- Puning Hot Spring Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-emerald-500 space-y-3" data-day="day3">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-amber-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 07:30 - 14:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">普寧溫泉 Puning Hot Spring 4x4 越野冒險之旅</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 whitespace-nowrap shrink-0">🏞️ 自然冒險</span>
-          </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p>📍 <b>景點特色：</b>位於皮納圖博火山麓下的秘境溫泉區。搭乘 4x4 越野吉普車穿梭在壯麗的火山峽谷與河床溪流中，過程刺激熱血！</p>
-            <p>♨️ <b>體驗亮點：</b>體驗獨特的「天然火山灰泥漿沙浴 SPA」，再前往山谷溫泉池泡湯放鬆，午餐享用部落傳統 Buffet。</p>
-          </div>
-          <div class="bg-amber-50 p-2.5 rounded-xl text-xs text-amber-900 border border-amber-200/80 leading-relaxed">
-            👕 <b>建議穿著：</b>請穿著輕便短褲、可弄髒之衣物或泳衣、涉水涼鞋，並準備一套替換衣物。
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="flame" class="w-4 h-4 text-amber-600 shrink-0"></i> Puning Hot Spring Station</span>
-            <a href="https://maps.google.com/?q=Puning+Hot+Spring" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-amber-50 text-amber-700 font-semibold rounded-lg hover:bg-amber-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
-            </a>
-          </div>
-        </div>
-
-        <!-- Hotel Rest Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-indigo-500 space-y-3" data-day="day3">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-indigo-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 14:30 - 17:30</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">返回飯店梳洗休憩 & 自由享受設施</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-100 text-indigo-800 whitespace-nowrap shrink-0">🏨 飯店設施</span>
-          </div>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            返回美多利飯店沖洗換裝，午後可在露天泳池畔放鬆、前往 SPA 按摩，或至 Casino 場體驗試手氣。
-          </p>
-        </div>
-
-        <!-- Dinner Card: Toscana Texas BBQ & Seafood Buffet + Lobster -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-orange-500 space-y-3" data-day="day3">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-orange-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 17:30 - 20:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">Toscana 週末頂級自助晚宴 (德州烤肉 & 海鮮 Buffet)</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-orange-100 text-orange-800 whitespace-nowrap shrink-0">🍱 頂級海陸饗宴</span>
-          </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-2">
-            <p>🍖 <b>自助餐特色：</b>美多利飯店 Toscana 餐廳週末限定 Buffet！主打香氣四溢的正宗<b>德州煙燻原塊烤肉</b>與<b>豐富生鮮海鮮吃到飽</b>。</p>
-            <div class="bg-amber-50 p-2.5 rounded-xl border border-amber-200 text-amber-900 font-medium text-xs flex items-center gap-2">
-              <span class="text-lg">🦞</span>
-              <div><b>專屬精緻安排：</b>每位同仁均獨享<b>「精緻龍蝦主菜餐點」乙份</b>，搭配現切熟成牛排與法式甜點！</div>
-            </div>
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="sparkles" class="w-4 h-4 text-amber-500 shrink-0"></i> Toscana Restaurant at Midori</span>
-            <span class="text-slate-400 font-mono">美多利飯店一樓</span>
-          </div>
-        </div>
-
-        <!-- Meal Summary 8/28 -->
-        <div class="glass-card rounded-xl p-3 bg-amber-50/90 border border-amber-200 text-xs flex flex-wrap gap-x-5 gap-y-1.5 text-slate-700 shadow-sm" data-day="day3">
-          <span><b>🥣 早餐：</b>飯店內享用</span>
-          <span><b>🍱 午餐：</b>普寧溫泉原民傳統 Buffet</span>
-          <span><b>🍖 晚餐：</b>飯店 Toscana 德州烤肉海鮮晚宴</span>
-          <span><b>🏨 住宿：</b>美多利賭場酒店 Midori Clark Hotel</span>
-        </div>
-      </div>
-
-      <!-- ================= Day 4: 8/29 (六) ================= -->
-      <div class="day-section day4 space-y-4">
-        <div class="bg-emerald-900 text-white p-3.5 sm:p-4 rounded-2xl shadow-md">
-          <h2 class="text-base sm:text-lg font-black flex items-center gap-2">
-            <i data-lucide="calendar" class="w-5 h-5 text-amber-300 shrink-0"></i> 8/29 (六)：蘇比克灣海洋冒險與野生動物園
-          </h2>
-        </div>
-
-        <!-- Ocean Adventure Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-emerald-500 space-y-3" data-day="day4">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-emerald-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 09:00 - 14:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">Subic Ocean Adventure 蘇比克灣海洋樂園</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 whitespace-nowrap shrink-0">🏞️ 景點介紹</span>
-          </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p>📍 <b>景點特色：</b>東南亞首座開放式海洋生態樂園，設於天然海灣之中。</p>
-            <p>🐬 <b>體驗亮點：</b>觀賞海豚高空跳躍特技、海獅搞笑互動表演與水族館生態導覽。午餐於園區內自由選購。</p>
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="waves" class="w-4 h-4 text-blue-500 shrink-0"></i> Ocean Adventure Subic</span>
-            <a href="https://maps.google.com/?q=Ocean+Adventure+Subic" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
-            </a>
-          </div>
-        </div>
-
-        <!-- Zoobic Safari Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-emerald-500 space-y-3" data-day="day4">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-emerald-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 14:10 - 16:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">Zoobic Safari 蘇比克灣野生動物園 (老虎探險區)</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 whitespace-nowrap shrink-0">🏞️ 野生動物</span>
-          </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p>📍 <b>景點特色：</b>佔地廣大的野生動物園區，提供真實叢林野生體驗。</p>
-            <p>🐅 <b>體驗亮點：</b>搭乘防護鐵籠車深入「老虎 Safari 區」，近距離觀賞孟加拉虎撲上車窗搶食的震撼畫面！</p>
-          </div>
-          <div class="pt-2.5 border-t flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-            <span class="flex items-center gap-1"><i data-lucide="footprints" class="w-4 h-4 text-amber-600 shrink-0"></i> Zoobic Safari Subic</span>
-            <a href="https://maps.google.com/?q=Zoobic+Safari" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition flex items-center gap-1 touch-active">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Google 地圖導航
-            </a>
-          </div>
-        </div>
-
-        <!-- Chinese Dinner Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-orange-500 space-y-3" data-day="day4">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-orange-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 18:30</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">蓬萊中餐廳 歡送桌菜晚宴 (美多利賭場酒店)</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-orange-100 text-orange-800 whitespace-nowrap shrink-0">🍱 歡送晚宴</span>
-          </div>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            回到美多利飯店一樓蓬萊中餐廳，享用名廚烹調的精緻中式名菜與海鮮桌菜，為這趟旅程劃下溫馨完美的句點。
-          </p>
-        </div>
-
-        <!-- Meal Summary 8/29 -->
-        <div class="glass-card rounded-xl p-3 bg-amber-50/90 border border-amber-200 text-xs flex flex-wrap gap-x-5 gap-y-1.5 text-slate-700 shadow-sm" data-day="day4">
-          <span><b>🥣 早餐：</b>飯店內享用</span>
-          <span><b>🍔 午餐：</b>海洋樂園內自由選購</span>
-          <span><b>🥢 晚餐：</b>飯店蓬萊中餐廳歡送晚宴</span>
-          <span><b>🏨 住宿：</b>美多利賭場酒店 Midori Clark Hotel</span>
-        </div>
-      </div>
-
-      <!-- ================= Day 5: 8/30 (日) ================= -->
-      <div class="day-section day5 space-y-4">
-        <div class="bg-blue-900 text-white p-3.5 sm:p-4 rounded-2xl shadow-md">
-          <h2 class="text-base sm:text-lg font-black flex items-center gap-2">
-            <i data-lucide="calendar" class="w-5 h-5 text-amber-300 shrink-0"></i> 8/30 (日)：返航台灣
-          </h2>
-        </div>
-
-        <!-- Checkout Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-blue-500 space-y-3" data-day="day5">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-blue-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 09:45 - 10:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">退房辦理與專車接駁前往機場</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-blue-100 text-blue-800 whitespace-nowrap shrink-0">✈️ 接駁專車</span>
-          </div>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            享用飯店早餐後收拾行李辦理退房，隨後搭乘接駁專車前往克拉克國際機場 (CRK)。
-          </p>
-        </div>
-
-        <!-- Flight Back Card -->
-        <div class="itinerary-card glass-card rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition border-l-4 border-blue-500 space-y-3" data-day="day5">
-          <div class="flex justify-between items-start gap-2">
-            <div>
-              <span class="text-xs font-bold text-blue-600 tracking-wider flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 8/30 (日) 12:00 - 14:00</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-800 mt-0.5">搭乘長榮航空 BR234 返抵台灣</h3>
-            </div>
-            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-blue-100 text-blue-800 whitespace-nowrap shrink-0">✈️ 回程航班</span>
-          </div>
-          <div class="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5">
-            <p><b>【回程航班資訊】</b>長榮航空 BR234（返航日期：<b>2026 年 8 月 30 日 星期日</b>）</p>
-            <ul class="list-disc pl-5 space-y-0.5 text-xs text-slate-600">
-              <li><b>起飛：</b>克拉克國際機場 (CRK) </b> (12:00)</li>
-              <li><b>抵達：</b>桃園國際機場 (TPE) <b>第二航廈 Terminal 2</b> (14:00)</li>
-              <li><b>託運行李：</b>每人 <b>1 件 23 kg</b> ｜ <b>手提行李：</b>每人 <b>1 件 7 kg</b></li>
-              <li><b>說明：</b>預計 14:00 降落桃園 T2，結束美好的菲律賓克拉克員旅之旅！</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Meal Summary 8/30 -->
-        <div class="glass-card rounded-xl p-3 bg-amber-50/90 border border-amber-200 text-xs flex flex-wrap gap-x-5 gap-y-1.5 text-slate-700 shadow-sm" data-day="day5">
-          <span><b>🥣 早餐：</b>飯店內享用</span>
-          <span><b>🍱 午餐：</b>長榮機上精緻餐點</span>
-          <span><b>🏠 晚餐：</b>溫暖的家</span>
-          <span><b>🏡 住宿：</b>溫暖的家</span>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Empty Search Result -->
-    <div id="no-results" class="hidden glass-card rounded-2xl p-8 text-center text-slate-500">
-      <i data-lucide="search-x" class="w-10 h-10 mx-auto text-slate-400 mb-2"></i>
-      <p class="font-semibold text-slate-700">找不到符合條件的行程或景點</p>
-      <p class="text-xs mt-1">請嘗試輸入其他關鍵字（如：烤肉、海鮮、溫泉、海洋、購物等）。</p>
+    <!-- SECTION DAY 2 DETAIL -->
+    <div id="view-day2" class="tab-view hidden space-y-4">
+      <div class="bg-indigo-700 text-white p-4 rounded-2xl shadow-md flex justify-between items-center">
+        <div>
+          <span class="text-xs px-2 py-0.5 bg-white/20 rounded-md font-semibold">第二天 · 8月27日 (星期四)</span>
+          <h2 class="text-lg sm:text-xl font-bold mt-1">西班牙古蹟文化巡禮、在地美饌與 SM 購物之旅</h2>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-xs sm:text-sm">
+        <!-- Event 1: Las Casas -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-indigo-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-indigo-700 font-bold px-2 py-0.5 bg-indigo-50 rounded border border-indigo-200">08:30 - 15:00</span>
+              <span class="text-xs font-bold text-indigo-800 flex items-center gap-1">🏛️ 歷史文化巡禮</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">Las Casas Filipinas de Acuzar 西班牙古蹟村</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 景點特色：</b>位於巴丹半島，園區將全菲律賓 18-19 世紀原汁原味的西班牙殖民時期古蹟豪宅拆解移築重組，重現 40 多棟百年西班牙經典建築群。</p>
+              <p><b>🛶 體驗亮點：</b>搭乘古典竹筏 (Balsa) 漫遊運河、搭乘復古馬車或路面電車穿梭石板路；並於園區古色古香建築內享用傳統菲式古蹟風味午餐。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Las+Casas+Filipinas+de+Acuzar" target="_blank" class="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold rounded-lg border border-indigo-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 西班牙村導航
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 2: Local Dinner -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-amber-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-amber-700 font-bold px-2 py-0.5 bg-amber-50 rounded border border-amber-200">17:00 - 18:30</span>
+              <span class="text-xs font-bold text-amber-800 flex items-center gap-1">🍱 美食饗宴</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">菲律賓當地特色料理饗宴</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 餐廳特色：</b>品嚐菲律賓美食之都「邦板牙 (Pampanga)」最具代表性的道地特色美食餐廳。</p>
+              <p><b>🥩 美食亮點：</b>享用經典金黃脆皮烤乳豬 (Lechon)、熱鐵板香辣碎豬肉 (SISIG)、蒜香飯 (Garlic Rice) 及道地羅望子酸湯，體驗極致菲式風味。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Filipino+Restaurant+Pampanga" target="_blank" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 font-bold rounded-lg border border-amber-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 特色餐廳導航
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 3: SM City Pampanga -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-purple-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-purple-700 font-bold px-2 py-0.5 bg-purple-50 rounded border border-purple-200">19:00 - 21:00</span>
+              <span class="text-xs font-bold text-purple-800 flex items-center gap-1">🛍️ 購物補給</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">SM City Pampanga 邦板牙大型購物中心採買</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 商場特色：</b>該區域最具規模的指標性 SM 綜合購物商場，專櫃與品牌齊全，設有大型超市。</p>
+              <p><b>🛍️ 購物亮點：</b>採買 7D 芒果乾、Owl Tree 香蕉脆片、Havaianas 拖鞋與各式菲國特色伴手禮與點心。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=SM+City+Pampanga" target="_blank" class="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold rounded-lg border border-purple-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> SM 商場導航
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION DAY 3 DETAIL -->
+    <div id="view-day3" class="tab-view hidden space-y-4">
+      <div class="bg-amber-700 text-white p-4 rounded-2xl shadow-md flex justify-between items-center">
+        <div>
+          <span class="text-xs px-2 py-0.5 bg-white/20 rounded-md font-semibold">第三天 · 8月28日 (星期五)</span>
+          <h2 class="text-lg sm:text-xl font-bold mt-1">gemik Clark 戶外活動體驗、Marquee Mall 與飯店悠閒時光</h2>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-xs sm:text-sm">
+        <!-- Event 1: gemik Clark -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-amber-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-amber-700 font-bold px-2 py-0.5 bg-amber-50 rounded border border-amber-200">09:00 - 11:00</span>
+              <span class="text-xs font-bold text-amber-800 flex items-center gap-1">🏎️ 戶外冒險</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">gemik Clark 自選活動體驗（ATV、射擊、射箭）</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 景點特色：</b>克拉克極具好評的熱門戶外極限運動基地，提供多樣化戶外動態設施。</p>
+              <p><b>🎯 體驗亮點：</b>駕駛越野 ATV 穿梭叢林泥地，體驗真實打靶射擊與精準射箭，感受滿滿熱血與活力！</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://maps.app.goo.gl/yX3k756ideJFzMTTA?g_st=ic" target="_blank" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 font-bold rounded-lg border border-amber-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> gemik 地圖導航
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 2: Marquee Mall -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-purple-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-purple-700 font-bold px-2 py-0.5 bg-purple-50 rounded border border-purple-200">11:30 - 14:30</span>
+              <span class="text-xs font-bold text-purple-800 flex items-center gap-1">🛍️ 購物與美饌</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">Marquee Mall by Ayala Malls 逛街與午餐自理</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 商場特色：</b>由 Ayala 地產集團精心打造的高質感購物中心，綠植環繞、環境舒適明亮。</p>
+              <p><b>🍴 美食亮點：</b>匯集菲式、美式、日式、義式等多國連鎖餐廳與美味美食街，供同仁自由尋味享用午餐。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Marquee+Mall+by+Ayala+Malls" target="_blank" class="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 font-bold rounded-lg border border-purple-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Marquee 導航
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 3: Hotel Relax -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-teal-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-teal-700 font-bold px-2 py-0.5 bg-teal-50 rounded border border-teal-200">14:30 - 18:00</span>
+              <span class="text-xs font-bold text-teal-800 flex items-center gap-1">🏊 飯店休閒</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">享受美多利飯店 (Midori Hotel) 頂級設施</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 設施特色：</b>五星級美多利賭場酒店具備綠意景觀戶外泳池、池畔酒吧、水療 SPA 與 24H Casino 娛樂場。</p>
+              <p><b>💦 體驗亮點：</b>換上泳裝暢游戲水、享受日光浴、體驗 SPA 放鬆或是試試手氣，沉浸於奢華渡假時光。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Midori+Clark+Hotel+and+Casino" target="_blank" class="px-3 py-1.5 bg-teal-50 hover:bg-teal-100 text-teal-700 font-bold rounded-lg border border-teal-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 美多利飯店導航
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 4: Texas Joe's -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-rose-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-rose-700 font-bold px-2 py-0.5 bg-rose-50 rounded border border-rose-200">18:00 - 20:30</span>
+              <span class="text-xs font-bold text-rose-800 flex items-center gap-1">🍱 美食饗宴</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">Texas Joe's House of Ribs 美式德州肋排海鮮晚宴</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 餐廳特色：</b>克拉克特區內知名度極高、充滿西部牛仔復古風情的正宗美式牛排肋排專賣店。</p>
+              <p><b>🍖 美食亮點：</b>品嚐慢火木燻嫩豬肋排 (Slow-Smoked Ribs)、安格斯肋眼牛排、巨型海鮮拼盤與特調精釀啤酒。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Texas+Joe's+House+of+Ribs+Clark" target="_blank" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-bold rounded-lg border border-rose-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Texas Joe's 導航
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION DAY 4 DETAIL -->
+    <div id="view-day4" class="tab-view hidden space-y-4">
+      <div class="bg-cyan-700 text-white p-4 rounded-2xl shadow-md flex justify-between items-center">
+        <div>
+          <span class="text-xs px-2 py-0.5 bg-white/20 rounded-md font-semibold">第四天 · 8月29日 (星期六)</span>
+          <h2 class="text-lg sm:text-xl font-bold mt-1">蘇比克灣海洋樂園、Zoobic 野生動物園與蓬萊中餐廳歡送晚宴</h2>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-xs sm:text-sm">
+        <!-- Event 1: Ocean Adventure -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-cyan-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-cyan-700 font-bold px-2 py-0.5 bg-cyan-50 rounded border border-cyan-200">09:00 - 14:00</span>
+              <span class="text-xs font-bold text-cyan-800 flex items-center gap-1">🐬 景點介紹</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">Subic Ocean Adventure 蘇比克灣海洋樂園</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 景點特色：</b>東南亞首座開放式海洋生態樂園，設於天然海灣之中。</p>
+              <p><b>🐬 體驗亮點：</b>觀賞海豚高空跳躍特技、海獅搞笑互動表演與水族館生態導覽。午餐於園區內自由選購。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Ocean+Adventure+Subic+Bay" target="_blank" class="px-3 py-1.5 bg-cyan-50 hover:bg-cyan-100 text-cyan-700 font-bold rounded-lg border border-cyan-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 海洋樂園導航
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 2: Zoobic Safari -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-amber-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-amber-700 font-bold px-2 py-0.5 bg-amber-50 rounded border border-amber-200">14:10 - 16:00</span>
+              <span class="text-xs font-bold text-amber-800 flex items-center gap-1">🐅 野生動物</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">Zoobic Safari 蘇比克灣野生動物園 (老虎探險區)</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 景點特色：</b>佔地廣大的野生動物園區，提供真實叢林野生體驗。</p>
+              <p><b>🐅 體驗亮點：</b>搭乘防護鐵籠車深入「老虎 Safari 區」，近距離觀賞孟加拉虎撲上車窗搶食的震撼畫面！</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Zoobic+Safari+Subic" target="_blank" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 font-bold rounded-lg border border-amber-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 野生動物園導航
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 3: Farewell Dinner -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-rose-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-rose-700 font-bold px-2 py-0.5 bg-rose-50 rounded border border-rose-200">18:30</span>
+              <span class="text-xs font-bold text-rose-800 flex items-center gap-1">🍱 歡送晚宴</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">蓬萊中餐廳 歡送桌菜晚宴 (美多利賭場酒店)</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 餐廳介紹：</b>回到美多利飯店一樓蓬萊中餐廳，享用名廚烹調的精緻中式名菜與海鮮桌菜，為這趟旅程劃下溫馨完美的句點。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Midori+Clark+Hotel+and+Casino" target="_blank" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-bold rounded-lg border border-rose-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 蓬萊中餐廳導航
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION DAY 5 DETAIL -->
+    <div id="view-day5" class="tab-view hidden space-y-4">
+      <div class="bg-rose-700 text-white p-4 rounded-2xl shadow-md flex justify-between items-center">
+        <div>
+          <span class="text-xs px-2 py-0.5 bg-white/20 rounded-md font-semibold">第五天 · 8月30日 (星期日)</span>
+          <h2 class="text-lg sm:text-xl font-bold mt-1">美多利飯店巡禮、返航台北桃園</h2>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-xs sm:text-sm">
+        <!-- Event 1: Breakfast -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-amber-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-amber-700 font-bold px-2 py-0.5 bg-amber-50 rounded border border-amber-200">07:30 - 09:30</span>
+              <span class="text-xs font-bold text-amber-800 flex items-center gap-1">🥐 飯店早餐</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">美多利飯店享用豪華自助早餐 & 辦理退房</h3>
+            <div class="space-y-1 text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <p><b>📍 體驗特色：</b>悠閒享用美多利五星級飯店精緻的國際化中/西/菲式自助早餐，開啟活力滿滿的一天。</p>
+              <p><b>🧳 整理重點：</b>整備隨身行李與戰利品、檢查護照與個人物品，並於櫃檯辦理退房 (Check-out) 手續。</p>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Midori+Clark+Hotel+and+Casino" target="_blank" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 font-bold rounded-lg border border-amber-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 美多利飯店導航
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 2: Return Flight -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-rose-500 flex flex-col sm:flex-row justify-between gap-3">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-rose-700 font-bold px-2 py-0.5 bg-rose-50 rounded border border-rose-200">10:00 - 14:00</span>
+              <span class="text-xs font-bold text-rose-800 flex items-center gap-1">✈️ 回程國際航班</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base">長榮航空 BR234 克拉克機場 ➔ 桃園國際機場 T2</h3>
+            <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-slate-700 text-xs space-y-1">
+              <div><b>起飛：</b>克拉克國際機場 (CRK) (12:00)</div>
+              <div><b>抵達：</b>桃園國際機場 (TPE) 第二航廈 Terminal 2 (14:00)</div>
+              <div><b>託運行李：</b>每人 1 件 (23kg) ｜ 手提每人 1 件 (7kg)</div>
+              <div class="text-slate-500 pt-0.5 border-t border-slate-200/60">💡 說明：提前至 CRK 機場辦理托運，機上享用精緻午餐，滿載愉快回憶平安返抵家門！</div>
+            </div>
+          </div>
+          <div class="shrink-0 self-start sm:self-center">
+            <a href="https://www.google.com/maps/search/?api=1&query=Clark+International+Airport" target="_blank" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 font-bold rounded-lg border border-rose-200 inline-flex items-center gap-1 text-xs">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 克拉克機場導航
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
   </main>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      lucide.createIcons();
-      convertCurrency();
-    });
-
-    let activeTab = 'all'; 
-
+    // 1. Currency Conversion Logic
     function convertCurrency() {
-      const phpInput = document.getElementById('calc-php-input').value;
-      const rate = 0.58; // 1 PHP ≈ 0.58 TWD
-      const php = parseFloat(phpInput) || 0;
-      const twd = Math.round(php * rate);
-      document.getElementById('calc-twd-output').innerText = twd.toLocaleString();
+      const phpVal = parseFloat(document.getElementById('calc-php-input').value) || 0;
+      const twdVal = Math.round(phpVal * 0.58);
+      document.getElementById('calc-twd-output').innerText = twdVal.toLocaleString();
     }
 
-    function switchTab(tabKey, btnElement) {
-      activeTab = tabKey;
+    // 2. Tab Switching Logic
+    function switchTab(tabId, clickedBtn) {
+      const views = document.querySelectorAll('.tab-view');
+      views.forEach(v => v.classList.add('hidden'));
 
-      // 更新按鈕樣式
-      const buttons = document.querySelectorAll('.day-btn');
-      buttons.forEach(b => {
-        b.classList.remove('tab-active');
-        b.classList.add('text-slate-600');
-      });
+      let targetViewId = 'view-all-summary';
+      if (tabId === 'info') targetViewId = 'view-info';
+      else if (tabId === 'etravel') targetViewId = 'view-etravel';
+      else if (tabId === 'all') targetViewId = 'view-all-summary';
+      else targetViewId = 'view-' + tabId;
 
-      if (btnElement) {
-        btnElement.classList.add('tab-active');
-        btnElement.classList.remove('text-slate-600');
-      } else {
-        const targetBtn = Array.from(buttons).find(b => b.getAttribute('onclick').includes(`'${tabKey}'`));
-        if (targetBtn) {
-          targetBtn.classList.add('tab-active');
-          targetBtn.classList.remove('text-slate-600');
-        }
+      const targetView = document.getElementById(targetViewId);
+      if (targetView) {
+        targetView.classList.remove('hidden');
       }
 
-      // 控制視圖切換
-      const summaryView = document.getElementById('view-all-summary');
-      const detailsView = document.getElementById('view-details');
-      const etravelView = document.getElementById('view-etravel');
-      const infoView = document.getElementById('view-info');
+      const buttons = document.querySelectorAll('.day-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('tab-active');
+        if (!btn.classList.contains('text-amber-800') && !btn.classList.contains('text-rose-700')) {
+          btn.classList.add('text-slate-600');
+        }
+      });
 
-      summaryView.classList.add('hidden');
-      detailsView.classList.add('hidden');
-      etravelView.classList.add('hidden');
-      infoView.classList.add('hidden');
-
-      if (tabKey === 'all') {
-        summaryView.classList.remove('hidden');
-      } else if (tabKey === 'etravel') {
-        etravelView.classList.remove('hidden');
-      } else if (tabKey === 'info') {
-        infoView.classList.remove('hidden');
+      if (clickedBtn) {
+        clickedBtn.classList.add('tab-active');
       } else {
-        detailsView.classList.remove('hidden');
-
-        // 只顯示選定日期的區域
-        const sections = document.querySelectorAll('.day-section');
-        sections.forEach(sec => {
-          if (sec.classList.contains(tabKey)) {
-            sec.classList.remove('hidden');
-          } else {
-            sec.classList.add('hidden');
+        buttons.forEach(btn => {
+          if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes("'" + tabId + "'")) {
+            btn.classList.add('tab-active');
           }
         });
       }
 
-      applyFilters();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
 
-      // 順暢捲動至頂部選單
-      window.scrollTo({ top: 120, behavior: 'smooth' });
+      const mainEl = document.querySelector('main');
+      if (mainEl && window.scrollY > 200) {
+        mainEl.scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
+    // 3. Search Filter Logic
     function applyFilters() {
-      const searchKeyword = document.getElementById('search-input').value.toLowerCase().trim();
-      const cards = document.querySelectorAll('.itinerary-card');
-      const noResultsEl = document.getElementById('no-results');
+      const query = document.getElementById('search-input').value.toLowerCase().trim();
+      const allCards = document.querySelectorAll('.tab-view .glass-card, .tab-view > div');
 
-      if (activeTab === 'all' || activeTab === 'etravel' || activeTab === 'info') {
-        noResultsEl.classList.add('hidden');
+      if (!query) {
+        allCards.forEach(card => card.style.display = '');
         return;
       }
 
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const isCorrectDay = card.dataset.day === activeTab;
-        const textMatch = searchKeyword === '' || card.innerText.toLowerCase().includes(searchKeyword);
-
-        if (isCorrectDay && textMatch) {
-          card.style.display = 'block';
-          visibleCount++;
+      allCards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = '';
         } else {
           card.style.display = 'none';
         }
       });
-
-      if (visibleCount === 0) {
-        noResultsEl.classList.remove('hidden');
-      } else {
-        noResultsEl.classList.add('hidden');
-      }
     }
+
+    // Initialize Lucide Icons on DOM load
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
   </script>
 </body>
 </html>
